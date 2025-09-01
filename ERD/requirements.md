@@ -1,5 +1,5 @@
-Entities and Attributes
-1. User Entity
+#Entities and Attributes
+###1. User Entity
 user_id (PK, UUID)
 
 first_name (VARCHAR, NOT NULL)
@@ -16,7 +16,7 @@ role (ENUM: guest, host, admin, NOT NULL)
 
 created_at (TIMESTAMP, DEFAULT)
 
-2. Property Entity
+###2. Property Entity
 property_id (PK, UUID)
 
 host_id (FK → User)
@@ -33,7 +33,7 @@ created_at (TIMESTAMP, DEFAULT)
 
 updated_at (TIMESTAMP, ON UPDATE)
 
-3. Booking Entity
+##3. Booking Entity
 booking_id (PK, UUID)
 
 property_id (FK → Property)
@@ -50,7 +50,7 @@ status (ENUM: pending, confirmed, canceled, NOT NULL)
 
 created_at (TIMESTAMP, DEFAULT)
 
-4. Payment Entity
+###4. Payment Entity
 payment_id (PK, UUID)
 
 booking_id (FK → Booking)
@@ -61,7 +61,7 @@ payment_date (TIMESTAMP, DEFAULT)
 
 payment_method (ENUM: credit_card, paypal, stripe, NOT NULL)
 
-5. Review Entity
+###5. Review Entity
 review_id (PK, UUID)
 
 property_id (FK → Property)
@@ -74,7 +74,7 @@ comment (TEXT, NOT NULL)
 
 created_at (TIMESTAMP, DEFAULT)
 
-6. Message Entity
+###6. Message Entity
 message_id (PK, UUID)
 
 sender_id (FK → User)
@@ -85,7 +85,7 @@ message_body (TEXT, NOT NULL)
 
 sent_at (TIMESTAMP, DEFAULT)
 
-Relationships
+##Relationships
 User → Property (One-to-Many)
 
 A user (host) can own multiple properties
@@ -130,5 +130,5 @@ A user can receive multiple messages
 
 A message has one sender and one recipient
 
-ER Diagram Representation
+##ER Diagram Representation
     (<WhatsApp Image 2025-09-01 at 01.10.11_1f7da3f4.jpg>)
